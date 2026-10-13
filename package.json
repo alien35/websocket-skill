@@ -1,0 +1,59 @@
+{
+  "name": "websocket-skill",
+  "version": "1.0.0",
+  "description": "Two-Lane & Multi-Lane WebSocket Architecture Toolkit to eliminate Head-of-Line (HoL) Blocking, Bufferbloat, and Slow-Consumer Interference (RFC 9330, RFC 9332, CATS, RFC 9000/9114/9218)",
+  "type": "module",
+  "bin": {
+    "websocket-lanes": "./bin/websocket-lanes.js"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dual-lane": "./src/dual-lane.ts",
+    "./cats": "./src/cats-conductor.ts",
+    "./slow-consumer": "./src/slow-consumer.ts",
+    "./webtransport": "./src/webtransport-adapter.ts",
+    "./dualq": "./src/dualq-monitor.ts",
+    "./benchmark": "./src/benchmark.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "bench": "node --experimental-strip-types bin/websocket-lanes.js benchmark",
+    "diagnose": "node --experimental-strip-types bin/websocket-lanes.js diagnose",
+    "serve": "node --experimental-strip-types bin/websocket-lanes.js serve",
+    "demo": "node --experimental-strip-types bin/websocket-lanes.js demo",
+    "help": "node --experimental-strip-types bin/websocket-lanes.js --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alien35/websocket-skill.git"
+  },
+  "keywords": [
+    "websocket",
+    "head-of-line-blocking",
+    "bufferbloat",
+    "dualq",
+    "l4s",
+    "rfc9330",
+    "rfc9332",
+    "cats-conductor",
+    "webtransport",
+    "http3",
+    "quic",
+    "slow-consumer",
+    "message-conflation",
+    "two-lane-transport",
+    "real-time",
+    "agent-skill"
+  ],
+  "author": "Alexander Leon",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@types/ws": "^8.18.2"
+  }
+}
